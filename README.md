@@ -8,8 +8,8 @@ vim: expandtab tabstop=2
 
 ## nodes2qflist
 
-This plugin helps to search for specific Tree-Sitter nodes in a buffer and populate the
-quickfix list with the result.
+This plugin helps to search for Tree-Sitter nodes in a buffer and populate the quickfix
+list with the result.
 
 ### Requirements
 
@@ -18,8 +18,8 @@ Only [Neovim 0.8+](https://github.com/neovim/neovim/releases) is required, nothi
 ### Usage
 
 For this plugins you can use bundled queries from
-`<this_plugin_dir>/queries/*/nodes2qflist.scm`, or add your own queries in
-`<nvim_config_dir>/queries/*/nodes2qflist.scm`.
+`<this_plugin_dir>/queries/<filetype>/nodes2qflist.scm` or add your own queries in
+`<nvim_config_dir>/queries/<filetype>/nodes2qflist.scm`.
 
 Then you only need to assign `nodes2qflist.search()` to a keymap :
 
@@ -27,7 +27,7 @@ Then you only need to assign `nodes2qflist.search()` to a keymap :
 vim.keymap.set("n", "<leader>qf", function()
   -- "functions" is the capture name to use from the queries file (*.scm)
   -- "@functions" is also allowed
-	require("nodes2qflist").search("functions")
+  require("nodes2qflist").search("functions")
 end)
 ``` 
 
